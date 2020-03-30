@@ -2,15 +2,14 @@ import discord
 from datetime import datetime, timedelta
 import json
 import time
+import os
 
 client = discord.Client()
-json_open = open('id.json', 'r')
-json_load = json.load(json_open)
 
-server_id = json_load['server_id']
-syukkinbo_channel_id = json_load['syukkinbo_channel_id']
-bot_token = json_load['bot_token']
 
+server_id = int(os.environ['SERVER_ID'])
+syukkinbo_channel_id = int(os.environ['SYUKKIN_ID'])
+bot_token = str(os.environ['BOT_TOKEN_ID'])
 
 
 
